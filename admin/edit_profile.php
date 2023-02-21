@@ -26,7 +26,7 @@ include("inc/head.php");
             <?php
 
             $aid=$_GET['editid'];
-            $ret=mysqli_query($con,"SELECT * FROM employee WHERE ID='$aid'");
+            $ret=mysqli_query($con,"SELECT * FROM employees WHERE ID='$aid'");
             while ($rowProfile=mysqli_fetch_array($ret)) {
 
             ?>

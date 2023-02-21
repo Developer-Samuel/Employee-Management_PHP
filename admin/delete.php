@@ -6,7 +6,7 @@ require 'config/db.php';
 
 $id = $_GET['id'];
 
-$result = mysqli_query($con, "DELETE FROM employee WHERE id=$id");
+$result = mysqli_query($con, "DELETE FROM employees WHERE id=$id");
 
 if($result)
 {

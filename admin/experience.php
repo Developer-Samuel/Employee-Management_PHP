@@ -18,7 +18,7 @@ include("inc/head.php");
 
     <div class="article">
         <div class="title2">
-            <h1>My Experience</h1>
+            <h1>Edit Experience</h1>
         </div>
         <br>
         <form class="experience-form" method="post" action="">

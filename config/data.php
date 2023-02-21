@@ -5,7 +5,7 @@ error_reporting(0);
 $eid = $_SESSION['uid'];
 $empid= $_SESSION['uid'];
 
-$ret = mysqli_query($con,"SELECT * FROM employee WHERE ID='$eid'");
+$ret = mysqli_query($con,"SELECT * FROM employees WHERE ID='$eid'");
 $row = mysqli_fetch_array($ret);
 
 $retEdu = mysqli_query($con,"SELECT * FROM education WHERE EmpID='$empid'");

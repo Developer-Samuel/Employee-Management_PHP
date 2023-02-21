@@ -6,7 +6,7 @@ error_reporting(0);
 $aid = $_SESSION['aid'];
 $editID = $_GET['editid'];
 
-$ret = mysqli_query($con,"SELECT * FROM admintable WHERE ID='$aid'");
+$ret = mysqli_query($con,"SELECT * FROM admins WHERE ID='$aid'");
 $row = mysqli_fetch_array($ret);
 
 $retEdu=mysqli_query($con,"SELECT * FROM education WHERE EmpID='$editID'");

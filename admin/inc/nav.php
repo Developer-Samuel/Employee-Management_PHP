@@ -8,4 +8,6 @@
         <div class="nav-link2"><img src="icons/admin.png"><a href="employees.php">Employees</a></div>
         <div class="nav-link2"><img src="icons/admin.png"><a href="add_admin.php">Add Admin</a></div>
     <hr class="hr3">
+        <div class="nav-link3"><img src="icons/admin.png"><a href="admin_list.php">Admin list</a></div>
+    <hr class="hr4">   
 </div>

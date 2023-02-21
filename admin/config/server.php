@@ -9,7 +9,7 @@ if(isset($_POST['add-admin']))
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
-    $check_admin = "SELECT * FROM admintable WHERE AdminUsername='$username' LIMIT 1";
+    $check_admin = "SELECT * FROM admins WHERE AdminUsername='$username' LIMIT 1";
     $result = mysqli_query($con, $check_admin);
     $check = mysqli_fetch_assoc($result);
     
@@ -35,7 +35,7 @@ if(isset($_POST['add-admin']))
 
     else
     {
-        $query=mysqli_query($con, "INSERT INTO admintable(AdminName, AdminUsername, Password) VALUES ('$adminName', '$username', '$password')");
+        $query=mysqli_query($con, "INSERT INTO admins(AdminName, AdminUsername, Password) VALUES ('$adminName', '$username', '$password')");
 
         if ($query) 
         {
@@ -56,7 +56,7 @@ if(isset($_POST['login']))
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $query=mysqli_query($con,"SELECT ID FROM admintable WHERE AdminUsername='$username' AND Password='$password'");
+    $query=mysqli_query($con,"SELECT ID FROM admins WHERE AdminUsername='$username' AND Password='$password'");
 
     $ret=mysqli_fetch_array($query);
 
@@ -87,7 +87,7 @@ if(isset($_POST['update']))
 
     else
     {
-        $query = mysqli_query($con, "UPDATE admintable SET AdminName='$adminName' WHERE ID='$aid'");
+        $query = mysqli_query($con, "UPDATE admins SET AdminName='$adminName' WHERE ID='$aid'");
     
         if ($query) 
         {
@@ -107,7 +107,7 @@ if(isset($_POST['changePass']))
     $currentPass=$_POST['currentPass'];
     $newPass=$_POST['newPass'];
     $confirmPass=$_POST['confirmPass'];
-    $query = mysqli_query($con,"SELECT ID FROM admintable WHERE ID='$aid' AND Password='$currentPass'");
+    $query = mysqli_query($con,"SELECT ID FROM admins WHERE ID='$aid' AND Password='$currentPass'");
     $row = mysqli_fetch_array($query);
     
     if($row > 0)
@@ -129,7 +129,7 @@ if(isset($_POST['changePass']))
             
         else
         {
-            $query = mysqli_query($con,"update admintable set Password='$newPass' where ID='$aid'");
+            $query = mysqli_query($con,"update admins set Password='$newPass' where ID='$aid'");
             echo "<script>alert('Your password successully changed.')</script>";
         }
             
@@ -153,7 +153,7 @@ if(isset($_POST['updateEmployee']))
     $emp_joining = $_POST['emp_joining_date'];
     $gender= $_POST['gender'];
      
-    $query = mysqli_query($con, "UPDATE employee SET EmpFname='$fname', EmpLname='$lname', EmpCode='$emp_code', EmpDept='$emp_dept', EmpDesignation='$emp_designation', EmpWorkPosition='$emp_work_position', EmpJoining='$emp_joining', EmpGender='$gender' WHERE ID='$eid'");
+    $query = mysqli_query($con, "UPDATE employees SET EmpFname='$fname', EmpLname='$lname', EmpCode='$emp_code', EmpDept='$emp_dept', EmpDesignation='$emp_designation', EmpWorkPosition='$emp_work_position', EmpJoining='$emp_joining', EmpGender='$gender' WHERE ID='$eid'");
     
     if ($query) 
     {

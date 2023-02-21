@@ -22,7 +22,7 @@ $previous_page = $page_no - 1;
 $next_page = $page_no + 1;
 
 $result_count = mysqli_query(
-    $con,"SELECT COUNT(*) AS total_records FROM `employee`"
+    $con,"SELECT COUNT(*) AS total_records FROM `employees`"
 );
 
 $total_records = mysqli_fetch_array($result_count);
@@ -39,7 +39,7 @@ $second_last = $total_no_of_pages - 1;
 
     <div class="article">
         <div class="title2">
-            <h1>Employees Details</h1>
+            <h1>Employee Details</h1>
         </div>
 
         <table class="table-employees">
@@ -60,7 +60,7 @@ $second_last = $total_no_of_pages - 1;
 
         <?php
 
-        $ret=mysqli_query($con,"SELECT * FROM employee LIMIT $offset, $total_records_per_page");
+        $ret=mysqli_query($con,"SELECT * FROM employees LIMIT $offset, $total_records_per_page");
         while ($rowProfile=mysqli_fetch_array($ret)) 
         {
         ?>

@@ -11,7 +11,7 @@ if(isset($_POST['signup']))
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
-    $check_query = "SELECT * FROM employee WHERE EmpCode='$emp_code' OR EmpEmail='$email' LIMIT 1";
+    $check_query = "SELECT * FROM employees WHERE EmpCode='$emp_code' OR EmpEmail='$email' LIMIT 1";
     $result = mysqli_query($con, $check_query);
     $check = mysqli_fetch_assoc($result);
     
@@ -42,7 +42,7 @@ if(isset($_POST['signup']))
 
     else
     {
-        $query=mysqli_query($con, "INSERT INTO employee(EmpFname, EmpLname, EmpCode, EmpEmail, EmpPassword) VALUE ('$fname', '$lname', '$emp_code', '$email', '$password' )");
+        $query=mysqli_query($con, "INSERT INTO employees(EmpFname, EmpLname, EmpCode, EmpEmail, EmpPassword) VALUE ('$fname', '$lname', '$emp_code', '$email', '$password' )");
 
         if ($query) 
         {
@@ -61,7 +61,7 @@ if(isset($_POST['login']))
 {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $query = mysqli_query($con,"SELECT ID FROM employee WHERE EmpEmail='$email' AND EmpPassword='$password' ");
+    $query = mysqli_query($con,"SELECT ID FROM employees WHERE EmpEmail='$email' AND EmpPassword='$password' ");
 
     $ret = mysqli_fetch_array($query);
 
@@ -94,7 +94,7 @@ if(isset($_POST['update']))
 
     else
     {
-        $query = mysqli_query($con, "UPDATE employee SET EmpFname='$fname', EmpLname='$lname', EmpCode='$emp_code', EmpDept='$emp_dept', EmpDesignation='$emp_designation', EmpWorkPosition='$emp_work_position', EmpJoining='$emp_joining', EmpGender='$gender' WHERE ID='$eid'");
+        $query = mysqli_query($con, "UPDATE employees SET EmpFname='$fname', EmpLname='$lname', EmpCode='$emp_code', EmpDept='$emp_dept', EmpDesignation='$emp_designation', EmpWorkPosition='$emp_work_position', EmpJoining='$emp_joining', EmpGender='$gender' WHERE ID='$eid'");
     
         if ($query) 
         {
@@ -188,7 +188,7 @@ if(isset($_POST['changePass']))
     $currentPass=$_POST['currentPass'];
     $newPass=$_POST['newPass'];
     $confirmPass=$_POST['confirmPass'];
-    $query = mysqli_query($con,"SELECT ID FROM employee WHERE ID='$empid' AND EmpPassword='$currentPass'");
+    $query = mysqli_query($con,"SELECT ID FROM employees WHERE ID='$empid' AND EmpPassword='$currentPass'");
     $row = mysqli_fetch_array($query);
 
     if($row > 0)
@@ -210,7 +210,7 @@ if(isset($_POST['changePass']))
         
         else
         {
-            $query = mysqli_query($con,"UPDATE employee SET EmpPassword='$newPass' WHERE ID='$empid'");
+            $query = mysqli_query($con,"UPDATE employees SET EmpPassword='$newPass' WHERE ID='$empid'");
             echo "<script>alert('Your password successully changed.')</script>";
         }
         

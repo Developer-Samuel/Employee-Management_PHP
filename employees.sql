@@ -3,33 +3,33 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-CREATE DATABASE  IF NOT EXISTS `employee-management`;
+CREATE DATABASE IF NOT EXISTS `employee-management`;
 
-CREATE TABLE `employee` (
-  `ID` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `EmpFname` varchar(50) NOT NULL,
-  `EmpLname` varchar(50) NOT NULL,
-  `EmpCode` varchar(50) NOT NULL UNIQUE KEY,
-  `EmpDept` varchar(100) NOT NULL,
-  `EmpDesignation` varchar(100) NOT NULL,
-  `EmpWorkPosition` varchar(30) NOT NULL,
-  `EmpEmail` varchar(100) NOT NULL,
-  `EmpPassword` varchar(100) NOT NULL,
-  `EmpJoining` date NOT NULL,
-  `EmpGender` enum('Male','Female') NOT NULL,
-  `RegisterDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `employees` (
+  `ID` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `EmpFname` VARCHAR(50) NOT NULL,
+  `EmpLname` VARCHAR(50) NOT NULL,
+  `EmpCode` VARCHAR(50) NOT NULL UNIQUE KEY,
+  `EmpDept` VARCHAR(100) NOT NULL,
+  `EmpDesignation` VARCHAR(100) NOT NULL,
+  `EmpWorkPosition` VARCHAR(30) NOT NULL,
+  `EmpEmail` VARCHAR(100) NOT NULL,
+  `EmpPassword` VARCHAR(100) NOT NULL,
+  `EmpJoining` DATE NOT NULL,
+  `EmpGender` ENUM('Male','Female') NOT NULL,
+  `RegisterDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `admintable` (
+CREATE TABLE `admins` (
   `ID` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `AdminName` varchar(50) DEFAULT NULL,
-  `AdminUsername` varchar(50) DEFAULT NULL,
-  `Password` varchar(100) DEFAULT NULL,
-  `RegisterDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `AdminUsername` VARCHAR(50) UNIQUE KEY,
+  `AdminName` VARCHAR(50),
+  `Password` VARCHAR(100),
+  `RegisterDate` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `admintable` (`AdminName`, `AdminUsername`, `Password`) VALUES
+INSERT INTO `admins` (`AdminName`, `AdminUsername`, `Password`) VALUES
 ('Ahmed Johnson', 'Admin', 'admin123');
 
 
