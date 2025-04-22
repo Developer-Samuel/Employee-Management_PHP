@@ -1,12 +1,9 @@
 <?php
-
 session_start();
 require 'config/db.php';
 require 'config/server.php';
 require 'config/checklogin.php';
-
 include("inc/head.php");
-
 ?>
 
 <div class="card-body">
@@ -14,12 +11,10 @@ include("inc/head.php");
         include("inc/nav.php");
         include("inc/header.php");
     ?>
-
     <div class="article">
         <div class="title2">
             <h1>Change Password</h1>
         </div>
-        
         <form class="change-pass-form" method="post" action="">
             <div class="row-inline">
                 <label for="currentPass">Current Password</label>
@@ -37,13 +32,10 @@ include("inc/head.php");
             </div>
             <br>
             <input class="add-update-button" type="submit" name="changePass" value="Change">
-
     </div>
-
     <?php
         include("inc/footer.php");
     ?>
-
 </div>
 
 </body>
