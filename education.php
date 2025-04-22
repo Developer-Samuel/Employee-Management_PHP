@@ -20,14 +20,7 @@ include("inc/head.php");
         <div class="title2">
             <h1>My Education</h1>
         </div>
-        <br>
-
-<?php
-
-
-
-?>
-        
+        <br>  
         <form class="education-form" method="post" action="">
             <div class="row-inline">
                 <label for="hs-name">High School Name</label>
@@ -78,13 +71,10 @@ include("inc/head.php");
             <br>
             <input class="add-update-button" type="submit" name="education" value="Submit">
         </form>
-
     </div>
-
     <?php
         include("inc/footer.php");
     ?>
-
 </div>
 
 </body>
