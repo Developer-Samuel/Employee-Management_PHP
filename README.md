@@ -1,5 +1,5 @@
 ### 🔸 Employee Management System  
-**🔹 Technologies:** PHP, MySQL, Bootstrap  
+**🔹 Technologies:** PHP, MySQL, CSS  
 
 🔧 *Personal project developed around 2019 to practice PHP and database design, and to explore building a modular CRUD application without a full framework.* 
 
